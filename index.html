@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dr. Ashokkumar Memorial Charity Trust works to support education, healthcare, food security, women’s empowerment and community welfare.">
+  <meta name="theme-color" content="#173f35">
+  <title>Dr. Ashokkumar Memorial Charity Trust</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    :root{--green:#173f35;--green2:#245b4b;--gold:#d7a84b;--cream:#fbf8f1;--ink:#1e2925;--muted:#66736d;--white:#fff;--line:#e7e4dc}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{color:inherit} .wrap{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);z-index:10;border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px 0}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+    .mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:#fff;font-weight:800;letter-spacing:-1px;flex:none;border:2px solid var(--gold)}
+    .brand strong{display:block;color:var(--green);font-size:14px;line-height:1.25}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    nav{display:flex;align-items:center;gap:22px}nav a{text-decoration:none;font-size:13px;font-weight:650;color:#34463f}nav a:hover{color:var(--green2)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;background:var(--gold);color:#1e2925;border:0}
+    .btn.dark{background:var(--green);color:#fff}.btn.outline{background:transparent;border:1px solid rgba(255,255,255,.65);color:#fff}
+    .hero{background:linear-gradient(110deg,rgba(15,48,40,.96),rgba(23,63,53,.82)),url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=2000&q=85') center/cover;color:#fff;padding:100px 0 94px}
+    .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:800}
+    h1{font-size:clamp(38px,6vw,66px);line-height:1.06;letter-spacing:-2px;max-width:760px;margin:18px 0}
+    .hero p{max-width:650px;color:#e8efeb;font-size:18px}
+    .hero h1 span{color:#f0cc7e}
+    .hero .motto{color:#f0cc7e;font-size:clamp(20px,3vw,28px);font-weight:700;margin:18px 0 24px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .trustline{margin-top:32px;color:#d6e2dc;font-size:13px}
+    section{padding:76px 0}.soft{background:var(--cream)}.section-head{max-width:720px;margin-bottom:34px}
+    h2{font-size:clamp(28px,4vw,40px);line-height:1.15;letter-spacing:-1px;color:var(--green);margin:9px 0 14px}
+    .lead{font-size:17px;color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 8px 28px rgba(23,63,53,.045)}
+    .icon{width:44px;height:44px;border-radius:13px;background:#edf3ef;display:grid;place-items:center;font-size:22px;margin-bottom:16px}
+    .card h3{margin:0 0 8px;color:var(--green);font-size:19px}.card p{margin:0;color:var(--muted);font-size:14px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+    .mark-img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--gold);background:var(--cream)}
+    .logo-panel{background:var(--cream);border-radius:24px;padding:18px;display:grid;place-items:center}
+    .logo-panel img{width:100%;max-width:440px;height:auto;border-radius:16px;display:block}
+    .ev{display:grid;grid-template-columns:96px 1fr;gap:26px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;margin-bottom:22px;box-shadow:0 8px 28px rgba(23,63,53,.045)}
+    .ev-date{text-align:center;background:var(--green);color:#fff;border-radius:16px;padding:14px 8px;align-self:start;border-bottom:3px solid var(--gold)}
+    .ev-date b{display:block;font-size:34px;line-height:1;letter-spacing:-1px}
+    .ev-date span{display:block;font-size:12px;margin-top:6px;color:#e0e9e4;font-weight:650}
+    .ev h3{margin:0 0 6px;color:var(--green);font-size:24px;line-height:1.25}
+    .ev-meta{margin:0 0 14px;color:#8a6b2d;font-size:13px;font-weight:650}
+    .ev-body p{color:var(--muted);margin:0 0 12px;font-size:15px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 0}
+    .chip{background:#edf3ef;color:var(--green2);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700}
+    .gallery{display:grid;gap:12px;margin-top:18px}
+    .gallery.two{grid-template-columns:1fr 1fr}.gallery.three{grid-template-columns:repeat(3,1fr)}.gallery.four{grid-template-columns:repeat(4,1fr)}
+    .shot{padding:0;border:0;background:none;cursor:zoom-in;border-radius:14px;overflow:hidden;display:block}
+    .shot img{display:block;width:100%;height:auto}
+    .gallery.crop .shot img{aspect-ratio:4/3;object-fit:cover;object-position:50% 55%}
+    .shot:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+    .launch-feature{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:24px;align-items:center;margin:28px 0;padding:22px;background:var(--cream);border-radius:16px;border-top:3px solid var(--gold)}
+    .launch-feature figure,.press-gallery figure{margin:0;min-width:0}
+    .launch-feature h4,.press-heading{color:var(--green);font-size:21px;line-height:1.3;margin:8px 0 12px}
+    .launch-feature .shot{width:100%}
+    .ev-body figcaption{font-size:13px;color:var(--muted);margin-top:10px}
+    .press-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin-top:20px}
+    .press-gallery .shot{width:100%;background:var(--cream);border:1px solid var(--line)}
+    .press-gallery .shot img{height:320px;object-fit:contain}
+    .press-gallery figcaption strong{display:block;color:var(--green)}
+    .press-gallery figcaption a{color:var(--green2);text-underline-offset:3px}
+    @media(max-width:540px){.launch-feature,.press-gallery{grid-template-columns:1fr}.launch-feature{padding:16px}.press-gallery .shot img{height:300px}}
+    .ev-more{margin-top:8px;color:var(--muted);font-size:15px}.ev-more a{color:var(--green2);font-weight:700}
+    .banner-fig{margin:28px 0 0}.banner-fig img{width:100%;height:auto;border-radius:20px;display:block;border:1px solid var(--line)}
+    .founder-photo{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:3px solid var(--gold);display:block;margin-bottom:14px}
+    dialog.lightbox{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh;overflow:visible}
+    dialog.lightbox::backdrop{background:rgba(10,25,20,.88)}
+    dialog.lightbox img{max-width:96vw;max-height:92vh;border-radius:12px;display:block}
+    .photo{min-height:390px;border-radius:24px;background:linear-gradient(0deg,rgba(23,63,53,.12),rgba(23,63,53,.02)),url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1100&q=85') center/cover}
+    .values{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+    .value{padding:14px;border-left:3px solid var(--gold);background:var(--cream);font-weight:700;color:var(--green);font-size:14px}
+    .founders{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .person{padding:24px;border-radius:18px;background:#fff;border:1px solid var(--line)}
+    .person .initial{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--green);color:white;font-weight:800;margin-bottom:14px}
+    .person h3{margin:0;color:var(--green)}.person p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    .event{border:1px dashed #c9c3b5;border-radius:18px;padding:26px;background:#fff}
+    .event strong{color:var(--green)}.event p{color:var(--muted);margin:8px 0}
+    .event-note{font-size:12px;color:#8a6b2d}
+    .impact{background:var(--green);color:#fff}.impact h2{color:#fff}.impact .lead{color:#d8e5df}
+    .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+    .impact-box{padding:22px;border:1px solid rgba(255,255,255,.2);border-radius:16px}.impact-box b{display:block;color:var(--gold);font-size:18px;margin-bottom:6px}.impact-box span{font-size:14px;color:#e0e9e4}
+    .join{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+    .join-panel{background:var(--cream);border-radius:20px;padding:28px}
+    .join-panel ul{padding-left:20px;color:var(--muted)}
+    footer{background:#102d26;color:#e6eee9;padding:40px 0}
+    footer .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    footer p,footer small{color:#b9cbc2;font-size:13px}footer a{color:#f3d58f}
+    .placeholder{background:#fff7e6;border:1px solid #f0dfb8;padding:12px 14px;border-radius:10px;color:#725a2b;font-size:13px}
+    @media(max-width:800px){nav{display:none}.grid{grid-template-columns:1fr 1fr}.about,.join{grid-template-columns:1fr}.photo{min-height:280px}.impact-grid{grid-template-columns:1fr}}
+    @media(max-width:700px){.ev{grid-template-columns:1fr;padding:22px}.ev-date{display:flex;gap:10px;align-items:baseline;justify-content:center;padding:10px}.ev-date span{margin:0}.gallery.three,.gallery.four{grid-template-columns:1fr 1fr}}
+    @media(max-width:540px){.gallery.two{grid-template-columns:1fr}.grid,.founders,.values{grid-template-columns:1fr}.hero{padding:76px 0}.brand strong{font-size:12px}.brand small{font-size:10px}section{padding:58px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Dr. Ashokkumar Memorial Charity Trust home">
+      <img class="mark-img" src="logo.jpg" alt="Dr. Ashokkumar Memorial Charity Trust logo" width="56" height="56">
+      <div><strong>Dr. Ashokkumar Memorial<br>Charity Trust</strong><small>Educate • Heal • Empower • Serve</small></div>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#programmes">Our work</a><a href="#trustees">Trustees</a><a href="#events">Events</a><a href="#involved">Get involved</a>
+    </nav>
+    <a class="btn dark" href="#involved">Support our work</a>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">A community-focused charitable trust</div>
+      <h1>In His Memory,<br><span>We Serve Humanity</span></h1>
+      <p class="motto">With Compassion, Unity &amp; Love</p>
+      <p>Dr. Ashokkumar Memorial Charity Trust works to strengthen communities through education, healthcare, food support, women’s empowerment and compassionate assistance for people in need.</p>
+      <div class="actions">
+        <a class="btn" href="#programmes">Explore our work</a>
+        <a class="btn outline" href="#involved">Volunteer or partner with us</a>
+      </div>
+      <div class="trustline">Based in the Salem region, Tamil Nadu • Educate • Heal • Empower • Serve</div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div class="logo-panel"><img src="logo.jpg" alt="Dr. Ashokkumar Memorial Charity Trust emblem: Educate, Heal, Empower, Serve" width="800" height="800"></div>
+      <div>
+        <div class="eyebrow">Who we are</div>
+        <h2>Educate • Heal • Empower • Serve</h2>
+        <p class="lead">Dr. Ashokkumar Memorial Charity Trust is a registered charitable trust working to support individuals and families through practical, community-centred initiatives.</p>
+        <p>Our approach is simple: listen to community needs, work with responsible local partners, and deliver support with respect, transparency and care. We aim to create opportunities that help people move towards healthier, safer and more secure lives.</p>
+        <div class="values">
+          <div class="value">Educate</div><div class="value">Heal</div>
+          <div class="value">Empower</div><div class="value">Serve</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft" id="programmes">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What we do</div>
+        <h2>Our areas of service</h2>
+        <p class="lead">We focus on essential needs and practical support. Our activities are shaped by community needs, available resources and trusted partnerships.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">📚</div><h3>Education support</h3><p>Helping students from families facing financial hardship continue their education through fee assistance, learning materials and other support. This includes support for girls and young women with school and tuition fees, helping them continue learning and pursue their aspirations.</p></article>
+        <article class="card"><div class="icon">🩺</div><h3>Health and medical support</h3><p>Supporting community health initiatives, including eye-care camps and access to basic health information and appropriate medical services through partners.</p></article>
+        <article class="card"><div class="icon">🍚</div><h3>Food and family welfare</h3><p>Providing food assistance and essential support to families and individuals experiencing hardship.</p></article>
+        <article class="card"><div class="icon">🌷</div><h3>Women’s empowerment</h3><p>Encouraging women’s wellbeing, confidence and access to opportunities through community activities and potential skills partnerships.</p></article>
+        <article class="card"><div class="icon">🤝</div><h3>Community care</h3><p>Recognising and supporting people who serve our communities, including appreciation and welfare activities for local corporation workers.</p></article>
+        <article class="card"><div class="icon">💛</div><h3>Support for people in need</h3><p>Responding to identified needs with compassion, whether through education, medical assistance, food support or other appropriate help.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="trustees" aria-labelledby="trustees-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our leadership</div>
+        <h2 id="trustees-heading">Trustee Details</h2>
+        <p class="lead">The Trust is guided by people who believe that meaningful change begins with care, responsibility and action.</p>
+      </div>
+      <div class="founders">
+        <div class="person"><img class="founder-photo" src="images/ramya-ashokkumar.jpg" alt="Er.Ramya Ashokkumar, President and Treasurer, Co-Founder" width="300" height="386"><h3>Er.Ramya Ashokkumar</h3><p>President and Treasurer</p><p>Co-Founder</p></div>
+        <div class="person"><img class="founder-photo" src="images/thivya-ashokkumar.jpg" alt="Er.Thivya Ashokkumar, Vice President, Co-Founder" width="420" height="420"><h3>Er.Thivya Ashokkumar</h3><p>Vice President</p><p>Co-Founder</p></div>
+        <div class="person"><h3>Dr.Monisha Ramesh</h3><p>Secretary</p></div>
+        <div class="person"><h3>Mrs.Savithiri Ashokkumar</h3><p>Joint Secretary</p></div>
+        <div class="person"><h3>Er.Snegha Nagaraj</h3><p>Deputy Secretary</p></div>
+      </div>
+    <figure class="banner-fig"><img src="images/founders-banner.jpg" alt="Dr. Ashokkumar Memorial Charity Trust: founders Thivya Ashokkumar and Ramya Ashokkumar" width="1600" height="900" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="soft" id="events">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">News and activities</div>
+        <h2>Events and recent initiatives</h2>
+        <p class="lead">From health camps to classroom talks and festival thank-yous, here is what your support has made possible in recent months.</p>
+      </div>
+      <article class="ev" id="eye-camp">
+        <div class="ev-date"><b>19</b><span>Jul 2026</span></div>
+        <div class="ev-body">
+          <h3>Free General Health and Eye Check-up Camp</h3>
+          <p class="ev-meta">Kulalar Community Hall, Dadagapatti, Salem &nbsp;•&nbsp; 10:00 am – 2:00 pm</p>
+          <p>On a Sunday morning, the community hall in Dadagapatti became a neighbourhood clinic. Families walked in without an appointment and without a bill, and left with a health check-up, a proper eye examination and clear advice on what to do next.</p>
+          <p>The camp was part of <strong>Project See Better</strong>, a myopia awareness initiative, and was held with Paavai Hospital (Eye and Skin Care) and RPS Hospitals. Participants who needed treatment also received special concessions on spectacles and cataract surgery, so that care did not stop at the check-up.</p>
+          <div class="chips"><span class="chip">Free for everyone</span><span class="chip">Project See Better</span><span class="chip">Paavai Hospital</span><span class="chip">RPS Hospitals</span></div>
+          <div class="launch-feature" id="grand-launch">
+            <figure>
+              <button class="shot" type="button" data-full="images/grand-launch-minister-invitation.jpg"><img src="images/grand-launch-minister-invitation.jpg" alt="Presenting the medical camp invitation to Hon’ble Transport Minister A. Vijay Tamilan Parthiban in person" loading="lazy"></button>
+              <figcaption>A personal invitation to inaugurate our first medical camp.</figcaption>
+            </figure>
+            <div>
+              <div class="eyebrow">Our first grand launch</div>
+              <h4>A personal invitation to the Hon’ble Transport Minister</h4>
+              <p>To mark the grand launch of our first medical camp, we met Hon’ble Transport Minister <strong>A. Vijay Tamilan Parthiban</strong> in person and invited him to inaugurate the camp.</p>
+              <p>This visit was a special moment for our Trust as we prepared to bring free healthcare services to the community.</p>
+              <a href="#camp-media" class="btn dark">See the media coverage</a>
+            </div>
+          </div>
+          <div class="gallery two">
+            <button class="shot" type="button" data-full="images/eye-camp-banner.jpg"><img src="images/eye-camp-banner.jpg" alt="Event banner in Tamil for the free eye check-up camp on 19 July 2026" loading="lazy"></button>
+            <button class="shot" type="button" data-full="images/medical-camp-banner.jpg"><img src="images/medical-camp-banner.jpg" alt="Event banner in Tamil for the free general medical check-up camp on 19 July 2026" loading="lazy"></button>
+          </div>
+          <h4 class="press-heading" id="camp-media">Our medical camp in the news</h4>
+          <p>News channels and newspapers covered our first medical camp, sharing moments from the event and the healthcare services offered to the community. We thank the media for helping spread awareness of this initiative.</p>
+          <p>Tap any image to enlarge it, or open the original to zoom in and read the report.</p>
+          <div class="press-gallery">
+            <figure>
+              <button class="shot" type="button" data-full="images/medical-camp-tn-salem.jpg"><img src="images/medical-camp-tn-salem.jpg" alt="TN Salem news coverage showing general health and eye examinations at the medical camp" loading="lazy"></button>
+              <figcaption><strong>TN Salem</strong>Medical camp coverage · <a href="images/medical-camp-tn-salem.jpg" target="_blank" rel="noopener">Open original</a></figcaption>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="images/medical-camp-trinity-mirror.jpg"><img src="images/medical-camp-trinity-mirror.jpg" alt="Trinity Mirror newspaper report about the free medical camp in Salem, dated 21 July 2026" loading="lazy"></button>
+              <figcaption><strong>Trinity Mirror</strong>21 July 2026 · <a href="images/medical-camp-trinity-mirror.jpg" target="_blank" rel="noopener">Open original</a></figcaption>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="images/medical-camp-makkal-kural.jpg"><img src="images/medical-camp-makkal-kural.jpg" alt="Makkal Kural Tamil newspaper coverage of the medical camp, dated 21 July 2026" loading="lazy"></button>
+              <figcaption><strong>Makkal Kural</strong>21 July 2026 · <a href="images/medical-camp-makkal-kural.jpg" target="_blank" rel="noopener">Open original</a></figcaption>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="images/medical-camp-tamil-press-report.jpg"><img src="images/medical-camp-tamil-press-report.jpg" alt="Tamil newspaper clipping with a group photograph and a report on the free medical camp" loading="lazy"></button>
+              <figcaption><strong>Tamil press coverage</strong>Free medical camp report · <a href="images/medical-camp-tamil-press-report.jpg" target="_blank" rel="noopener">Open original</a></figcaption>
+            </figure>
+            <figure>
+              <button class="shot" type="button" data-full="images/medical-camp-eye-screening-press.jpg"><img src="images/medical-camp-eye-screening-press.jpg" alt="Tamil newspaper clipping showing an eye examination during the medical camp" loading="lazy"></button>
+              <figcaption><strong>Tamil press coverage</strong>Eye screening at the camp · <a href="images/medical-camp-eye-screening-press.jpg" target="_blank" rel="noopener">Open original</a></figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="ev" id="school-talk">
+        <div class="ev-date"><b>21</b><span>Jul 2026</span></div>
+        <div class="ev-body">
+          <h3>Project See Better: an eye-health talk for students</h3>
+          <p class="ev-meta">St. Joseph’s Matriculation Higher Secondary School, Salem</p>
+          <p>Good eyesight is easy to take for granted until it starts to fade. At St. Joseph’s, we took the Project See Better message straight into the school hall, speaking to students about myopia (short-sightedness) and why it matters for children growing up today.</p>
+          <p>Awareness is the first step to prevention. When a child understands how to look after their eyes, the whole family benefits. The visit closed with a token of thanks to the school for welcoming us.</p>
+          <div class="chips"><span class="chip">Education</span><span class="chip">Eye health</span><span class="chip">Awareness talk</span></div>
+          <div class="gallery three crop">
+            <button class="shot" type="button" data-full="images/school-talk-1.jpg"><img src="images/school-talk-1.jpg" alt="Speaker at the podium during the Project See Better talk at St. Joseph’s school" loading="lazy"></button>
+            <button class="shot" type="button" data-full="images/school-talk-2.jpg"><img src="images/school-talk-2.jpg" alt="A slide on myopia is shown during the Project See Better talk" loading="lazy"></button>
+            <button class="shot" type="button" data-full="images/school-talk-3.jpg"><img src="images/school-talk-3.jpg" alt="Presenting a token of thanks at St. Joseph’s school" loading="lazy"></button>
+          </div>
+        </div>
+      </article>
+
+      <article class="ev" id="october-medical-camp">
+        <div class="ev-date"><b>25</b><span>Oct 2026</span></div>
+        <div class="ev-body">
+          <h3>Another milestone: our second medical camp</h3>
+          <p>The Trust conducted another medical camp on 25 October 2026, marking a further step in our community health initiatives.</p>
+        </div>
+      </article>
+
+      <article class="ev" id="diwali">
+        <div class="ev-date"><b>7</b><span>Nov 2026</span></div>
+        <div class="ev-body">
+          <h3>Diwali gifts for our sanitation workers</h3>
+          <p class="ev-meta">Salem &nbsp;•&nbsp; A festival thank-you</p>
+          <p>Before the lamps were lit, we paused to say thank you to the people who keep our streets clean every single day, often before the rest of us wake up.</p>
+          <p>Sanitation workers received new clothes and Diwali sweets from the Trust, a small gesture of respect so that those who work to make every festival possible can celebrate with something new of their own.</p>
+          <div class="chips"><span class="chip">Community care</span><span class="chip">Diwali</span><span class="chip">Dignity of work</span></div>
+          <div class="gallery four crop">
+            <button class="shot" type="button" data-full="images/diwali-1.jpg"><img src="images/diwali-1.jpg" alt="Presenting new clothes and sweets to a sanitation worker" loading="lazy"></button>
+            <button class="shot" type="button" data-full="images/diwali-2.jpg"><img src="images/diwali-2.jpg" alt="A sanitation worker receiving a Diwali gift from the Trust" loading="lazy"></button>
+            <button class="shot" type="button" data-full="images/diwali-3.jpg"><img src="images/diwali-3.jpg" alt="Handing over Diwali clothes and sweets" loading="lazy"></button>
+            <button class="shot" type="button" data-full="images/diwali-4.jpg"><img src="images/diwali-4.jpg" alt="Handing over Diwali clothes and sweets to sanitation staff" loading="lazy"></button>
+          </div>
+        </div>
+      </article>
+
+      <p class="ev-more">Have a cause or an event in mind? <a href="#involved">Partner with us</a>.</p>
+    </div>
+  </section>
+
+  <section class="impact">
+    <div class="wrap">
+      <div class="eyebrow">Our commitment</div>
+      <h2>Every contribution should make a difference.</h2>
+      <p class="lead">We believe in responsible service: understanding a need, planning a useful response, and sharing outcomes clearly with our supporters.</p>
+      <div class="impact-grid">
+        <div class="impact-box"><b>Education</b><span>Helping students stay in learning and pursue their potential.</span></div>
+        <div class="impact-box"><b>Health</b><span>Connecting communities with awareness, screening and care.</span></div>
+        <div class="impact-box"><b>Community</b><span>Supporting families and recognising the people who serve others.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="involved">
+    <div class="wrap join">
+      <div>
+        <div class="eyebrow">Be part of the change</div>
+        <h2>Partner with us. Volunteer. Make an impact.</h2>
+        <p class="lead">Whether you are an individual, a local business, a healthcare professional, an educational institution or a corporate organisation, you can help strengthen our community initiatives.</p>
+        <p>We welcome conversations about project sponsorship, in-kind contributions, volunteering, professional support and community partnerships.</p>
+      </div>
+      <div class="join-panel">
+        <h3 style="margin-top:0;color:var(--green)">Connect with the Trust</h3>
+        <p style="color:var(--muted);font-size:14px">Please contact us to discuss a project, volunteer opportunity or partnership.</p>
+        <p style="margin:18px 0 8px"><strong>Email:</strong> <a href="mailto:drashokkumarcharitytrust@gmail.com" style="color:var(--green2)">drashokkumarcharitytrust@gmail.com</a></p>
+        <p style="margin:8px 0 18px"><strong>Address:</strong> <span style="color:var(--muted)">No. 15, 7th Mariyamman Koil Street, Dadagapatti, Salem – 636006, Tamil Nadu, India</span></p>
+        <a class="btn dark" href="mailto:drashokkumarcharitytrust@gmail.com">Email the Trust</a>
+        <p style="font-size:11px;color:#8a6b2d;margin-bottom:0">No online donations are collected through this page.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div><strong>Dr. Ashokkumar Memorial Charity Trust</strong><p>In His Memory, We Serve Humanity<br>With Compassion, Unity &amp; Love</p></div>
+    <div><small>Salem region, Tamil Nadu, India</small><p><a href="#home">Back to top ↑</a></p></div>
+  </div>
+  <div class="wrap"><small>© <span id="year"></span> Dr. Ashokkumar Memorial Charity Trust. All rights reserved.</small></div>
+</footer>
+<dialog class="lightbox" id="lightbox" aria-label="Enlarged photo"><img alt=""></dialog>
+<script>
+(function(){var d=document.getElementById('lightbox'),i=d.querySelector('img');
+document.querySelectorAll('.shot').forEach(function(b){b.addEventListener('click',function(){var im=b.querySelector('img');i.src=b.dataset.full||im.src;i.alt=im.alt;d.showModal();});});
+d.addEventListener('click',function(){d.close();});})();
+</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
